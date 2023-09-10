@@ -1,12 +1,12 @@
 // import moon from "./src/images/moon-outline.svg";
-function Nav() {
+function Nav({ darkMode, toggleDarkMode }) {
   return (
-    <div className="shadow-sm">
+    <div className={`shadow-sm ${darkMode ? "light" : "dark"}`}>
       <nav className="container mx-auto p-6">
         <div className="flex items-center justify-between ">
           <p className="text-xl">Where in the world?</p>
           <div className="flex">
-            <span>
+            <span onClick={toggleDarkMode}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"

@@ -8,7 +8,7 @@ module.exports = {
         veryDark: "hsl(207, 26%, 17%)",
         veryDarkBlue: "hsl(200, 15%, 8%)",
         darkGray: "hsl(0, 0%, 52%)",
-        veryLightGray: "hsl(0, 0 %, 98 %)",
+        lightGray: "hsl(0, 0 %, 98 %)",
         White: "hsl(0, 0%, 100%)",
       },
       fontFamily: {
@@ -20,4 +20,5 @@ module.exports = {
     },
   },
   plugins: [],
+  darkMode: "class",
 };
