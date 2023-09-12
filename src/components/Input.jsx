@@ -1,15 +1,21 @@
-function Input() {
+function Input({ darkMode }) {
   return (
     <div className="flex flex-col items-left gap-3 container mx-auto   lg:flex lg:flex-row p-6  lg:justify-between">
       <div>
         <input
           type="text"
-          className="p-2 w-[100%] outline-none lg:w-[400px]"
+          className={`p-2 w-[100%] outline-none lg:w-[400px] ${
+            darkMode ? "light" : "dark"
+          }`}
           placeholder="Search for a country"
         />
       </div>
       <div>
-        <select name="" id="" className="p-2 outline-none">
+        <select
+          name=""
+          id=""
+          className={`p-2 outline-none ${darkMode ? "light" : "dark"}`}
+        >
           <option value="">Filter by Region</option>
           <option value="">Africa</option>
           <option value="">America</option>
