@@ -1,27 +1,27 @@
-function CountryCard({ darkMode, country }) {
+function CountryCard({ darkMode, countries }) {
   return (
     <div className="container mx-auto py-6 lg:p-6">
       <div className=" w-[95%] mx-auto shadow-sm lg:w-[40] lg:mx-0">
         <div>
           <img
-            src={country.flags.png}
+            src={countries.flags.png}
             alt=""
             className="w-[100%] lg:h-[200px]"
           />
         </div>
         <div className={`p-2 ${darkMode ? "light" : "dark"}`}>
-          <p className="font-bold text-xl py-3">{country.name.common}</p>
+          <p className="font-bold text-xl py-3">{countries.name.common}</p>
           <p>
             <b>Population:</b>
-            {country.population.toLocaleString()}
+            {countries.population.toLocaleString()}
           </p>
           <p>
             <b>Region:</b>
-            {country.region}
+            {countries.region}
           </p>
           <p>
             <b>Capital:</b>
-            {country.capital}
+            {countries.capital}
           </p>
         </div>
       </div>
