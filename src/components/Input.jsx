@@ -1,11 +1,16 @@
 import { useState } from "react";
 
-function Input({ darkMode, onSearch }) {
+function Input({ darkMode, onSearch, onSelect }) {
   const [input, setInput] = useState("");
   const submitHandle = (e) => {
     e.preventDefault();
     onSearch(input);
   };
+
+  function selectHandler(e) {
+    const regionName = e.target.value;
+    onSelect(regionName);
+  }
   return (
     <div className="flex flex-col items-left gap-3 container mx-auto   lg:flex lg:flex-row p-6  lg:justify-between">
       <div>
@@ -23,13 +28,13 @@ function Input({ darkMode, onSearch }) {
       </div>
       <div>
         <select
-          name=""
-          id=""
           className={`p-2 outline-none ${darkMode ? "light" : "dark"}`}
+          onChange={selectHandler}
         >
-          <option value="">Filter by Region</option>
+          <option value="All">Filter by Region</option>
           <option value="Africa">Africa</option>
           <option value="America">America</option>
+          <option value="Asia">Asia</option>
           <option value="Europe">Europe</option>
           <option value="Oceania">Oceania</option>
         </select>
