@@ -16,7 +16,10 @@ function App() {
       <Router>
         <Routes>
           <Route exact path="/" element={<CountryPage darkMode={darkMode} />} />
-          <Route path="/country/:countryName" element={<CountryDetails />} />
+          <Route
+            path="/country/:countryName"
+            element={<CountryDetails darkMode={darkMode} />}
+          />
         </Routes>
       </Router>
     </div>
