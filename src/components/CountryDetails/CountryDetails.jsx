@@ -78,14 +78,13 @@ function CountryDetails({ darkMode }) {
                   </h5>
                 </div>
               </div>
-              <div className="borders flex flex-col md:flex-row  md:mt-6">
+              <div className="borders flex md:flex-row  md:mt-6">
                 <p className="font-bold">Border Countries:</p>
-                <div className="borderblocks flex flex-row md:space-x-2">
-                  <div>{country.borders[0]}</div>
-                  <div>{country.borders[1]}</div>
-                  <div>{country.borders[2]}</div>
-                  <div>{country.borders[3]}</div>
-                </div>
+                {country.borders.map((smallborder) => (
+                  <div className="borderblocks flex flex-row space-x-2 md:space-x-2">
+                    <div className="mx-2">{smallborder}</div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
