@@ -19,6 +19,23 @@ function CountryDetails({ darkMode }) {
       setError(error.message);
     }
   };
+  const formatLanguages = (country) => {
+    return Object.values(country.languages).join(", ");
+  };
+
+  const formatCurrencies = (country) => {
+    const currencies = country.currencies;
+    const result = [];
+    for (let key in currencies) {
+      if (currencies.hasOwnProperty(key)) {
+        let nestedObj = currencies[key];
+        if (nestedObj.hasOwnProperty("name")) {
+          result.push(nestedObj.name);
+        }
+      }
+    }
+    return result.join(", ");
+  };
   useEffect(() => {
     getCountryByName();
   }, [countryName]);
@@ -71,10 +88,11 @@ function CountryDetails({ darkMode }) {
                     <b>Top Level Domain :</b> {country.tld}
                   </h5>
                   <h5>
-                    <b>Currencies :</b> {country.currencies[0]}
+                    <b>Currencies :</b> {formatCurrencies(country)}
                   </h5>
                   <h5>
                     <b>Language:</b>
+                    {formatLanguages(country)}
                   </h5>
                 </div>
               </div>
